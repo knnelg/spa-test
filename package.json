@@ -1,0 +1,27 @@
+{
+  "name": "spa-test",
+  "version": "0.0.1",
+  "description": "",
+  "main": "get-state-pension-date/get-state-pension-date.js",
+  "scripts": {
+    "server": "node server.js",
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0"
+  },
+  "devDependencies": {
+    "mocha": "^3.2.0",
+    "xo": "^0.17.1"
+  },
+  "xo": {
+    "env": [
+      "node",
+      "mocha"
+    ],
+    "esnext": true,
+    "spaces": true
+  }
+}
