@@ -1,5 +1,5 @@
 const assert = require('assert');
-const getStateRetirementDate = require('../src/get-state-pension-date/get-state-pension-date');
+const getStateRetirementDate = require('../src/get-state-pension-date').getStatePensionDateAsString;
 
 describe('getStateRetirementDate', () => {
 	// Men before 6 Dec 1953 retire at 65

@@ -1,5 +1,5 @@
 const assert = require('assert');
-const getStateRetirementDate = require('../src/get-state-pension-date/get-state-pension-date');
+const getStateRetirementDate = require('../src/get-state-pension-date').getStatePensionDate;
 
 describe('getStateRetirementDate', () => {
 	// Invalid year

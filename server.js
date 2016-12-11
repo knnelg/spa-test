@@ -1,6 +1,6 @@
 const express = require('express');
 
-const getStateRetirementDate = require('./src/get-state-pension-date/get-state-pension-date');
+const getStateRetirementDate = require('./src/get-state-pension-date').getStatePensiondateAsString;
 
 const app = express();
 

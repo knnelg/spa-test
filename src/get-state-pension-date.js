@@ -8,7 +8,8 @@ const statePensionAgeData = require('./spa-data');
 * Returns: 'undefined' if unable to calculate the date, otherwise it returns the
 *          state pension date as a string in the format YYYY-MM-DD
 */
-const getStatePensionDate = function (dateOfBirth, gender) {
+
+const getDate = function (dateOfBirth, gender) {
 	let result;
 
 	// Don't bother going any further if the input params are not valid
@@ -89,6 +90,30 @@ const getStatePensionDate = function (dateOfBirth, gender) {
 	return result;
 };
 
+const getString = function (dateOfBirth, gender) {
+	let result;
+	const statePensionDate = getDate(dateOfBirth, gender);
+
+	if (statePensionDate !== undefined) {
+		result = `${statePensionDate.getFullYear()}-${pad(statePensionDate.getMonth() + 1, '0', 2)}-${pad(statePensionDate.getDate(), '0', 2)}`;
+	}
+
+	return result;
+};
+
+/*
+* Utility function to pad a value with leading characters
+*/
+function pad(value, padCharacter, requiredLength) {
+	let valueString = value.toString();
+
+	while (valueString.length < requiredLength) {
+		valueString = padCharacter + valueString;
+	}
+
+	return valueString;
+} // End function pad()
+
 /*
 * Function to verify we have valid input data
 */
@@ -152,4 +177,9 @@ function isValidYYYYMMDDDate(dateString) {
 	return result;
 } // End function isValidYYYYMMDDDate()
 
-module.exports = getStatePensionDate;
+// module.exports = getStatePensionDate;
+
+module.exports = {
+	getStatePensionDate: getDate,
+	getStatePensionDateAsString: getString
+};
