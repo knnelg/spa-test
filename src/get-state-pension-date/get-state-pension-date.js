@@ -81,7 +81,7 @@ const getStatePensionDate = function (dateOfBirth, gender) {
 		// As long as we found a rule, set the result to the retirement date in
 		// the required format
 		if (statePensionDate !== undefined) {
-			result = `${statePensionDate.getFullYear()}-${pad(statePensionDate.getMonth() + 1, '0', 2)}-${pad(statePensionDate.getDate(), '0', 2)}`;
+			result = statePensionDate;
 		}
 	}
 
@@ -151,18 +151,5 @@ function isValidYYYYMMDDDate(dateString) {
 
 	return result;
 } // End function isValidYYYYMMDDDate()
-
-/*
-* Utility function to pad a value with leading characters
-*/
-function pad(value, padCharacter, requiredLength) {
-	let valueString = value.toString();
-
-	while (valueString.length < requiredLength) {
-		valueString = padCharacter + valueString;
-	}
-
-	return valueString;
-} // End function pad()
 
 module.exports = getStatePensionDate;
